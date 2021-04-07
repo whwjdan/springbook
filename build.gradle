@@ -16,13 +16,19 @@ configurations {
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-web-services'
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.springframework.boot:spring-boot-starter-mustache')
+    implementation("org.mariadb.jdbc:mariadb-java-client")
+    implementation('com.h2database:h2')
+    implementation('org.projectlombok:lombok')
+    annotationProcessor('org.projectlombok:lombok')
+    testImplementation('org.projectlombok:lombok')
+    testAnnotationProcessor('org.projectlombok:lombok')
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
